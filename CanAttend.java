@@ -7,9 +7,11 @@ public class CanAttend {
 	public static boolean canAttend(ArrayList<MeetingInterval> meetings) {
 		//your implementation here
 		System.out.println(meetings);
-		for (int i = 1; i < meetings.size(); i++) {
-			if (meetings.get(i - 1).getEnd() > meetings.get(i).getStart() && meetings.get(i - 1).getStart() < meetings.get(i).getStart()) {
-				return false;
+		for (int i = 0; i < meetings.size(); i++) {
+			for (int j = i + 1; j < meetings.size(); j++) {
+				if (meetings.get(i).getStart() < meetings.get(j).getEnd() && meetings.get(i).getEnd() > meetings.get(j).getStart()) {
+					return false;
+				}
 			}
 		}
 		return true;
