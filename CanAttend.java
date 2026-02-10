@@ -8,7 +8,7 @@ public class CanAttend {
 		//your implementation here
 		System.out.println(meetings);
 		for (int i = 1; i < meetings.size(); i++) {
-			if (meetings.get(i - 1).getEnd() > meetings.get(i).getStart()) {
+			if (meetings.get(i - 1).getEnd() > meetings.get(i).getStart() && meetings.get(i - 1).getStart() < meetings.get(i).getStart()) {
 				return false;
 			}
 		}
@@ -25,7 +25,7 @@ public class CanAttend {
 		//please include additional testing here!
 		ArrayList<MeetingInterval> meet2 = new ArrayList<MeetingInterval>();
 		meet2.add(new MeetingInterval(100, 200));
-		meet2.add(new MeetingInterval(210, 300));
+		meet2.add(new MeetingInterval(10, 20));
 		System.out.println(canAttend(meet2) ? "There is no conflict with attending "+meet2+" meetings":"Can't attend "+meet2+" meetings due to conflict");
 	}
 }
