@@ -2,8 +2,8 @@ import java.util.ArrayList;
 
 public class CanAttend {
 
-	//precondition: Have a ArrayList with some different schedule times in it
-	//postcondition: It will return either if you can attend or you cannot attend the scheduled meetings
+	//precondition: Have an ArrayList with starting and ending times that are integers (0 <= startTime <= endTime <= 2399).
+	//postcondition: If it has a schedule conflict, then it will return false, and if it does not have any schedule conflict, then it will return true.
 	public static boolean canAttend(ArrayList<MeetingInterval> meetings) {
 		//your implementation here
 		System.out.println(meetings);
